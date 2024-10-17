@@ -1,3 +1,5 @@
+print("Loading lazy.lua")
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
@@ -49,4 +51,6 @@ require("lazy").setup({
 -- # My custom commands
 -- ------------------------------------------------------
 
-vim.api.nvim_create_user_command("WorkSpaceFiles", "Telescope find_files cwd=~/workspace/", {})
+-- vim.api.nvim_create_user_command("WorkSpaceFiles", "Telescope find_files cwd=~/workspace/", {})
+
+print("Loaded lazy.lua")

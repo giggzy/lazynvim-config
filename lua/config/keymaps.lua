@@ -2,9 +2,15 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 --
+print("Loading keymaps.lua")
 
 local wk = require("which-key")
-wk.register({
+wk.add({
+  -- { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Focus Filesysem" },
+  { "<leader>o", "<cmd>w<cr>", desc = "Save File" },
+
+  --[[
+-- Migrate any of these I wna to keep to the new format
   ["<leader>"] = {
     name = "LazyVim",
     o = { "<cmd>w<cr>", "Save" },
@@ -36,6 +42,7 @@ wk.register({
   f = {
     -- use all the defaults
     h = { "<cmd>Telescope harpoon marks<cr>", "harpoon marks" },
+    o = { "<cmd>Telescope live_grep search_dirs={'~/Documents/'}<cr>", "search my obsidian docs" },
   },
   g = {
     -- use all the defaults
@@ -74,7 +81,9 @@ wk.register({
       n = { ":=vim.treesitter.get_node():type()<cr>", "show node" },
     },
   },
-}, { prefix = "<leader>" })
+}, { prefix = "<leader>" }
+--]]
+})
 
 -- stuff
 -- keys = {
@@ -83,3 +92,5 @@ wk.register({
 --   { "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", desc = "Go to previous harpoon mark" },
 --   { "<leader>ha", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon marks" },
 -- },
+--
+print("Loaded keymaps.lua")

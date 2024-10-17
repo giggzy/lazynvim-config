@@ -19,4 +19,17 @@ return {
   {
     "ThePrimeagen/git-worktree.nvim",
   },
+  {
+    "otavioschwanck/arrow.nvim",
+    opts = {
+      show_icons = true,
+      leader_key = ";", -- Recommended to be a single key
+    },
+  },
+  {
+    "FabijanZulj/blame.nvim",
+    config = function()
+      require("blame").setup()
+    end,
+  },
 }
