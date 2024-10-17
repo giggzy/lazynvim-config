@@ -20,8 +20,49 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "~/Documents/gabe/",
+        path = "~/vaults/personal/",
       },
+      {
+        name = "work",
+        path = "~/vaults/work/",
+      },
+    },
+    -- Specify the path to your template
+    templates = {
+      subdir = "templates",
+      date_format = "%Y-%m-%d",
+      time_format = "%H:%M",
+      -- Define other substitutions
+      substitutions = {
+        date = function()
+          return os.date("%Y-%m-%d")
+        end,
+        title = function()
+          return vim.fn.expand("%:t:r") -- Not sure about this?
+        end,
+      },
+    },
+    -- Optional: Configure mappings
+    mappings = {
+      ["gf"] = {
+        action = function()
+          return require("obsidian").util.gf_passthrough()
+        end,
+        opts = { noremap = false, expr = true, buffer = true },
+      },
+      -- Add more mappings as needed
+    },
+    -- Optional: Configure note completion
+    completion = {
+      nvim_cmp = true,
+      min_chars = 2,
+    },
+
+    -- Optional: Configure additional Obsidian features
+    daily_notes = {
+      folder = "dailies",
+      date_format = "%Y-%m-%d",
+      template = "daily_template.md",
     },
   },
 }
