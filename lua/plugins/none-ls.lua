@@ -17,7 +17,7 @@ return {
     }
 
     for _, source in ipairs(sources) do
-      print("Registering source:", source.name)
+      D("Registering source:", source.name)
     end
 
     null_ls.setup({
