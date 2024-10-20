@@ -30,12 +30,12 @@ end
 -- Enable debugging
 function M.enable()
   M.DEBUG = true
-  M.print("Debugging enabled")
+  M.log("Debugging enabled")
 end
 
 -- Disable debugging
 function M.disable()
-  M.print("Debugging disabled")
+  M.log("Debugging disabled")
   M.DEBUG = false
 end
 
