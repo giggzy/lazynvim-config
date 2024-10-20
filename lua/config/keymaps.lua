@@ -14,16 +14,6 @@ wk.add({
   -- My Stuff
   { "<leader>m", group = "My Settings" },
   { "<leader>md", group = "Debugging" },
-  -- {
-  --   "<Leader>mde",
-  --   [[:lua require("gabe.utils.debug").enable()<CR>]],
-  --   desc = "Enable Debugging",
-  -- },
-  -- {
-  --   "<Leader>mdd",
-  --   [[:lua require("gabe.utils.debug").disable()<CR>]],
-  --   -- desc = = "View Log File",
-  -- },
   {
     "<Leader>mdv",
     function()
@@ -31,7 +21,6 @@ wk.add({
     end,
     desc = "View Log File",
   },
-  -- { "<Leader>mdc", [[:lua require("gabe.utils.debug").clear_log()<CR>]] },
   {
     "<Leader>mdc",
     function()
