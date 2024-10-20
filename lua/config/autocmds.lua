@@ -2,7 +2,7 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-print("Loading autocmds.lua")
+D("Loading autocmds.lua")
 
 -- add autocmds here
 local function detect_cloudformation()
@@ -34,4 +34,4 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-print("Loaded autocmds.lua")
+D("Loaded autocmds.lua")

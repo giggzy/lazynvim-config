@@ -1,6 +1,7 @@
 -- My custom commands
 --
-print("Loading commands.lua")
+D("Loading commands.lua")
+
 -- command! MyFiles :Telescope find_files cwd=~/workspace/
 -- vim.api.commands("MyFiles", "Telescope find_files cwd=~/workspace/")
 -- vim.api.nvim_create_command("MyFiles", ":Telescope find_files cwd=~/workspace/", {
@@ -75,4 +76,4 @@ vim.api.nvim_create_user_command("CheckNoneLsSources", check_none_ls_sources, {
 })
 
 -- vim.api.nvim_create_user_command("WorkSpaceFiles", "Telescope find_files cwd=~/workspace/", {})
-print("Loaded commands.lua")
+D("Loaded commands.lua")
