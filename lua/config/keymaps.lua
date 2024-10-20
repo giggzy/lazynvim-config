@@ -2,12 +2,57 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 --
-print("Loading keymaps.lua")
+D("Loading keymaps.lua")
 
+local debug = require("gabe.utils.debug")
 local wk = require("which-key")
+
 wk.add({
   -- { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Focus Filesysem" },
   { "<leader>o", "<cmd>w<cr>", desc = "Save File" },
+
+  -- My Stuff
+  { "<leader>m", group = "My Settings" },
+  { "<leader>md", group = "Debugging" },
+  -- {
+  --   "<Leader>mde",
+  --   [[:lua require("gabe.utils.debug").enable()<CR>]],
+  --   desc = "Enable Debugging",
+  -- },
+  -- {
+  --   "<Leader>mdd",
+  --   [[:lua require("gabe.utils.debug").disable()<CR>]],
+  --   -- desc = = "View Log File",
+  -- },
+  {
+    "<Leader>mdv",
+    function()
+      debug.view_log()
+    end,
+    desc = "View Log File",
+  },
+  -- { "<Leader>mdc", [[:lua require("gabe.utils.debug").clear_log()<CR>]] },
+  {
+    "<Leader>mdc",
+    function()
+      debug.clear_log()
+    end,
+    desc = "Clear Log File",
+  },
+  {
+    "<Leader>mdd",
+    function()
+      debug.disable()
+    end,
+    desc = "Disable Logging",
+  },
+  {
+    "<Leader>mde",
+    function()
+      debug.enable()
+    end,
+    desc = "Enable Logging",
+  },
 
   --[[
 -- Migrate any of these I wna to keep to the new format
@@ -93,4 +138,4 @@ wk.add({
 --   { "<leader>ha", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon marks" },
 -- },
 --
-print("Loaded keymaps.lua")
+D("Loaded keymaps.lua")
