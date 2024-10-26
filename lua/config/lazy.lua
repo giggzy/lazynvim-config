@@ -1,4 +1,4 @@
-print("Loading lazy.lua")
+-- print("Loading lazy.lua")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -66,4 +66,4 @@ require("config.keymaps")
 require("config.autocmds")
 require("config.commands")
 
-print("Loaded lazy.lua")
+-- print("Loaded lazy.lua")

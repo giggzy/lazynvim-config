@@ -5,5 +5,8 @@
 D("Loading options.lua")
 
 -- add options here
+vim.g.lazyvim_python_lsp = "pyright"
+-- Set to "ruff_lsp" to use the old LSP implementation version.
+vim.g.lazyvim_python_ruff = "ruff"
 
 D("Loaded options.lua")
